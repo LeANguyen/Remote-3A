@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import CustomButton from "./app/components/CustomButton";
 import RemoteScreen from "./app/screens/RemoteScreen";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
   // return (
@@ -11,7 +12,8 @@ export default function App() {
   //     <StatusBar style="auto" />
   //   </View>
   // );
-  return <RemoteScreen></RemoteScreen>;
+  // return <RemoteScreen></RemoteScreen>;
+  return <WelcomeScreen></WelcomeScreen>;
 }
 
 const styles = StyleSheet.create({

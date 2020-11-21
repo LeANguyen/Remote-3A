@@ -13,14 +13,14 @@ function CustomScreen({ children, _style }) {
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1
-    // paddingTop: Constants.statusBarHeight
+    flex: 1,
+    paddingTop: Constants.statusBarHeight
     // paddingBottom: Constants.statusBarHeight
   },
   view: {
     flex: 1,
     alignItems: "stretch",
-    backgroundColor: colors.dark2
+    backgroundColor: colors.light2
   }
 });
 

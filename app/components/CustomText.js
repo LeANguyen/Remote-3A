@@ -8,11 +8,11 @@ function CustomText({ _text, _style }) {
 
 const styles = StyleSheet.create({
   text: {
+    margin: 10,
     fontFamily: Platform.OS === "android" ? "monospace" : "Avenir",
-    color: colors.light1,
-    fontSize: 15,
-    fontWeight: "bold",
-    margin: 10
+    color: colors.dark1,
+    fontSize: 12,
+    fontWeight: "bold"
   }
 });
 

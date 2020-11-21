@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     // position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.green,
+    backgroundColor: colors.light1,
     // borderRadius: 170,
     padding: 10,
     flexDirection: "row"

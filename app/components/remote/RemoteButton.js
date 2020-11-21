@@ -15,10 +15,10 @@ function RemoteButton({ _iconName, _text, _onPressIn, _onPressOut, _style }) {
         <MaterialCommunityIcons
           name={_iconName}
           size={80}
-          color={colors.light1}
+          color={"rgb(255, 255, 255)"}
         ></MaterialCommunityIcons>
       )}
-      {_text && <CustomText _text={_text}></CustomText>}
+      {_text && <CustomText _text={_text} _style={styles.text}></CustomText>}
     </TouchableOpacity>
   );
 }
@@ -30,6 +30,9 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: "center",
     justifyContent: "center"
+  },
+  text: {
+    color: "rgb(255, 255, 255)"
   }
 });
 
