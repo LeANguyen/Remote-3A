@@ -4,10 +4,18 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import CustomText from "./CustomText";
 
-function CustomButton({ _text, _onPress, _style }) {
+function CustomButton({ _iconName, _iconSize, _text, _onPress, _style }) {
   return (
     <TouchableOpacity style={[styles.container, _style]} onPress={_onPress}>
-      <CustomText _text={_text} _style={styles.text}></CustomText>
+      {_iconName && (
+        <MaterialCommunityIcons
+          name={_iconName}
+          size={_iconSize}
+          color={"rgb(255, 255, 255)"}
+        ></MaterialCommunityIcons>
+      )}
+      {_text && <CustomText _text={_text} _style={styles.text}></CustomText>}
+      {/* <CustomText _text={_text} _style={styles.text}></CustomText> */}
     </TouchableOpacity>
   );
 }
@@ -20,7 +28,8 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 5,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    flexDirection: "row"
   },
   text: {
     color: "rgb(255, 255, 255)"

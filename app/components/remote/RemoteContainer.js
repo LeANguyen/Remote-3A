@@ -1,31 +1,47 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import RemoteButton from "./RemoteButton";
 import colors from "../../config/colors";
+import CustomButton from "../CustomButton";
 
 function RemoteContainer(props) {
   return (
     <View style={styles.container}>
       <View style={styles.controlPanel2}>
-        <RemoteButton
+        <CustomButton
           _iconName={"arrow-up-bold"}
-          _style={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
-        ></RemoteButton>
+          _iconSize={80}
+          _style={[
+            { borderTopLeftRadius: 5, borderTopRightRadius: 5 },
+            styles.button
+          ]}
+        ></CustomButton>
         <View style={{ flexDirection: "row" }}>
-          <RemoteButton
+          <CustomButton
             _iconName={"arrow-left-bold"}
-            _style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5 }}
-          ></RemoteButton>
-          <RemoteButton _text="AUTO"></RemoteButton>
-          <RemoteButton
+            _iconSize={80}
+            _style={[
+              { borderTopLeftRadius: 5, borderBottomLeftRadius: 5 },
+              styles.button
+            ]}
+          ></CustomButton>
+          <CustomButton _text="Auto" _style={styles.button}></CustomButton>
+          <CustomButton
             _iconName={"arrow-right-bold"}
-            _style={{ borderTopRightRadius: 5, borderBottomRightRadius: 5 }}
-          ></RemoteButton>
+            _iconSize={80}
+            _style={[
+              { borderTopRightRadius: 5, borderBottomRightRadius: 5 },
+              styles.button
+            ]}
+          ></CustomButton>
         </View>
-        <RemoteButton
+        <CustomButton
           _iconName={"arrow-down-bold"}
-          _style={{ borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}
-        ></RemoteButton>
+          _iconSize={80}
+          _style={[
+            { borderBottomLeftRadius: 5, borderBottomRightRadius: 5 },
+            styles.button
+          ]}
+        ></CustomButton>
       </View>
     </View>
   );
@@ -40,6 +56,13 @@ const styles = StyleSheet.create({
     // borderRadius: 170,
     padding: 10,
     flexDirection: "row"
+  },
+  button: {
+    marginHorizontal: 0,
+    marginVertical: 0,
+    width: 80,
+    height: 80,
+    borderRadius: 0
   },
   controlPanel1: {},
   controlPanel2: {

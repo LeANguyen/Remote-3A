@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.dark1,
-    fontFamily: Platform.OS === "android" ? "monospace" : "Avenir",
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     fontSize: 12,
     flex: 1,
     marginVertical: 10

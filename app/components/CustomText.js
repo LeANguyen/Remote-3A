@@ -9,9 +9,9 @@ function CustomText({ _text, _style }) {
 const styles = StyleSheet.create({
   text: {
     margin: 10,
-    fontFamily: Platform.OS === "android" ? "monospace" : "Avenir",
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     color: colors.dark1,
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: "bold"
   }
 });

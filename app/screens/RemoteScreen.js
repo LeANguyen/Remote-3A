@@ -33,11 +33,18 @@ function RemoteScreen({ navigation }) {
       <View style={styles.controlContainer}>
         <View style={{ flex: 1 }}>
           <CustomButton
-            _text={"Lift Up"}
+            _text={"Lift"}
+            _iconName={"arrow-up-bold"}
+            _iconSize={30}
             _style={styles.button}
-            _onPress={() => remoteApi.moveForward()}
+            _onPress={() => remoteApi.getCategories()}
           ></CustomButton>
-          <CustomButton _text="Lift Down" _style={styles.button}></CustomButton>
+          <CustomButton
+            _text="Lift"
+            _iconName={"arrow-down-bold"}
+            _iconSize={30}
+            _style={styles.button}
+          ></CustomButton>
           <CustomButton _text="Path" _style={styles.button}></CustomButton>
           <CustomButton
             _text="Disconnect"
