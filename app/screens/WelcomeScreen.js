@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import CustomScreen from "../components/CustomScreen";
@@ -7,7 +7,9 @@ import CustomText from "../components/CustomText";
 import colors from "../config/colors";
 import CustomButton from "../components/CustomButton";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
+  const remote = useRemote();
+  const [ip, setIp] = useState();
   return (
     <CustomScreen>
       <View style={styles.logoContainer}>
@@ -24,8 +26,17 @@ function WelcomeScreen(props) {
       <CustomTextInput
         _iconName={"ip"}
         _placeholder={"IP address..."}
+        _onChangeText={value => {
+          setIp(value);
+        }}
       ></CustomTextInput>
-      <CustomButton _text="Connect"></CustomButton>
+      <CustomButton
+        _text="Connect"
+        _onPress={() => {
+          remote.connect(ip);
+          navigation.navigate("Remote");
+        }}
+      ></CustomButton>
     </CustomScreen>
   );
 }

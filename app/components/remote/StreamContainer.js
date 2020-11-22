@@ -1,29 +1,26 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+
+// expo install react-native-webview
 import { WebView } from "react-native-webview";
-import CustomScreen from "../CustomScreen";
+import useRemote from "../../remote/useRemote";
 
 function StreamContainer(props) {
+  const remote = useRemote();
   return (
-    <CustomScreen _style={styles.container}>
+    <View style={styles.container}>
       <WebView
-        source={{ uri: "https://theinpaint.com/images/example-1-2.jpg" }}
+        source={{ uri: "https://www.youtube.com/watch?v=zBtKsrn_tr0" }}
+        // source={{ uri: "https://theinpaint.com/images/example-1-2.jpg" }}
+        // source={{ uri: "http://" + remote.ip + "/api/listings" }}
       />
-      {/* <WebView
-        style={styles.backgroundVideo}
-        automaticallyAdjustContentInsets={true}
-        scalesPageToFit={true}
-        startInLoadingState={false}
-        contentInset={{ top: 0, right: 0, left: 0, bottom: 0 }}
-        scrollEnabled={false}
-        source={{ html: this.formatHtml(), baseUrl: "/" }}
-      /> */}
-    </CustomScreen>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: 0
   }
 });

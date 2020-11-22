@@ -9,22 +9,22 @@ function RemoteContainer(props) {
       <View style={styles.controlPanel2}>
         <RemoteButton
           _iconName={"arrow-up-bold"}
-          _style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
+          _style={{ borderTopLeftRadius: 5, borderTopRightRadius: 5 }}
         ></RemoteButton>
         <View style={{ flexDirection: "row" }}>
           <RemoteButton
             _iconName={"arrow-left-bold"}
-            _style={{ borderTopLeftRadius: 10, borderBottomLeftRadius: 10 }}
+            _style={{ borderTopLeftRadius: 5, borderBottomLeftRadius: 5 }}
           ></RemoteButton>
           <RemoteButton _text="AUTO"></RemoteButton>
           <RemoteButton
             _iconName={"arrow-right-bold"}
-            _style={{ borderTopRightRadius: 10, borderBottomRightRadius: 10 }}
+            _style={{ borderTopRightRadius: 5, borderBottomRightRadius: 5 }}
           ></RemoteButton>
         </View>
         <RemoteButton
           _iconName={"arrow-down-bold"}
-          _style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}
+          _style={{ borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}
         ></RemoteButton>
       </View>
     </View>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     // position: "absolute",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.light1,
+    backgroundColor: colors.light2,
     // borderRadius: 170,
     padding: 10,
     flexDirection: "row"

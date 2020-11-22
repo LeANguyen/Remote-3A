@@ -6,8 +6,13 @@ import RemoteContainer from "../components/remote/RemoteContainer";
 import colors from "../config/colors";
 import StatContainer from "../components/remote/StatContainer";
 import StreamContainer from "../components/remote/StreamContainer";
+import useRemote from "../remote/useRemote";
+import CustomText from "../components/CustomText";
+import useRemoteApi from "../api/useRemoteApi";
 
-function RemoteScreen(props) {
+function RemoteScreen({ navigation }) {
+  const remote = useRemote();
+  const remoteApi = useRemoteApi();
   return (
     <CustomScreen _style={styles.screen}>
       <View style={styles.streamContainer}>
@@ -18,14 +23,29 @@ function RemoteScreen(props) {
         <StatContainer _style={styles.statContainer}></StatContainer>
       </View>
 
+      <CustomText
+        _text={"Connected to " + remote.ip}
+        _style={{
+          textAlign: "center",
+          margin: 5
+        }}
+      ></CustomText>
       <View style={styles.controlContainer}>
         <View style={{ flex: 1 }}>
-          <CustomButton _text="Lift Up" _style={styles.button}></CustomButton>
+          <CustomButton
+            _text={"Lift Up"}
+            _style={styles.button}
+            _onPress={() => remoteApi.moveForward()}
+          ></CustomButton>
           <CustomButton _text="Lift Down" _style={styles.button}></CustomButton>
           <CustomButton _text="Path" _style={styles.button}></CustomButton>
           <CustomButton
             _text="Disconnect"
             _style={styles.button}
+            _onPress={() => {
+              remote.disconnect();
+              navigation.navigate("Welcome");
+            }}
           ></CustomButton>
         </View>
         <RemoteContainer></RemoteContainer>
@@ -39,13 +59,13 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end"
   },
   streamContainer: {
-    flex: 1,
+    flex: 1.1,
     backgroundColor: colors.blue
   },
   statContainer: {},
   controlContainer: {
-    flex: 1,
-    backgroundColor: colors.light1,
+    flex: 0.9,
+    backgroundColor: colors.light2,
     flexDirection: "row"
   },
   button: {

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     margin: 10,
     fontFamily: Platform.OS === "android" ? "monospace" : "Avenir",
     color: colors.dark1,
-    fontSize: 12,
+    fontSize: 10,
     fontWeight: "bold"
   }
 });
