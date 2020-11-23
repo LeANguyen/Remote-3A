@@ -8,11 +8,13 @@ function StatContainer(props) {
     <View style={styles.container}>
       <View style={styles.statContainer}>
         <CustomText _text="Velocity" _style={styles.text}></CustomText>
-        <CustomText _text="..." _style={styles.text}></CustomText>
+        <CustomText _text="(m/s)" _style={styles.text}></CustomText>
+        <CustomText _text="5" _style={styles.text}></CustomText>
       </View>
       <View style={styles.statContainer}>
         <CustomText _text="Distance" _style={styles.text}></CustomText>
-        <CustomText _text="..." _style={styles.text}></CustomText>
+        <CustomText _text="(m)" _style={styles.text}></CustomText>
+        <CustomText _text="100" _style={styles.text}></CustomText>
       </View>
       <View style={styles.statContainer}>
         <CustomText _text="???" _style={styles.text}></CustomText>
@@ -25,12 +27,11 @@ function StatContainer(props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: colors.light1
+    backgroundColor: colors.light2
   },
   statContainer: { flex: 1, alignItems: "center", padding: 5 },
   text: {
-    margin: 0,
-    fontWeight: "normal"
+    margin: 0
   }
 });
 

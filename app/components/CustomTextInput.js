@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     fontSize: 12,
     flex: 1,
-    marginVertical: 10
+    marginVertical: 10,
+    fontWeight: "bold"
   }
 });
 

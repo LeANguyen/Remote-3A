@@ -1,22 +1,25 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import CustomScreen from "../components/CustomScreen";
-import CustomButton from "../components/CustomButton";
-import RemoteContainer from "../components/remote/RemoteContainer";
 import colors from "../config/colors";
 import StatContainer from "../components/remote/StatContainer";
 import StreamContainer from "../components/remote/StreamContainer";
 import useRemote from "../remote/useRemote";
 import CustomText from "../components/CustomText";
 import useRemoteApi from "../api/useRemoteApi";
+import NavigatorContainer from "../components/remote/NavigatorContainer";
+import UtilityContainer from "../components/remote/UtilityContainer";
 
 function RemoteScreen({ navigation }) {
   const remote = useRemote();
   const remoteApi = useRemoteApi();
+
   return (
     <CustomScreen _style={styles.screen}>
       <View style={styles.streamContainer}>
-        <StreamContainer></StreamContainer>
+        <StreamContainer
+          _uri={"https://theinpaint.com/images/example-1-2.jpg"}
+        ></StreamContainer>
       </View>
 
       <View style={styles.statContainer}>
@@ -25,37 +28,17 @@ function RemoteScreen({ navigation }) {
 
       <CustomText
         _text={"Connected to " + remote.ip}
-        _style={{
-          textAlign: "center",
-          margin: 5
-        }}
+        _style={styles.connectText}
       ></CustomText>
-      <View style={styles.controlContainer}>
-        <View style={{ flex: 1 }}>
-          <CustomButton
-            _text={"Lift"}
-            _iconName={"arrow-up-bold"}
-            _iconSize={30}
-            _style={styles.button}
-            _onPress={() => remoteApi.getCategories()}
-          ></CustomButton>
-          <CustomButton
-            _text="Lift"
-            _iconName={"arrow-down-bold"}
-            _iconSize={30}
-            _style={styles.button}
-          ></CustomButton>
-          <CustomButton _text="Path" _style={styles.button}></CustomButton>
-          <CustomButton
-            _text="Disconnect"
-            _style={styles.button}
-            _onPress={() => {
-              remote.disconnect();
-              navigation.navigate("Welcome");
-            }}
-          ></CustomButton>
-        </View>
-        <RemoteContainer></RemoteContainer>
+
+      <View style={styles.remoteContainer}>
+        <UtilityContainer
+          _onPress4={() => {
+            remote.disconnect();
+            navigation.navigate("Welcome");
+          }}
+        ></UtilityContainer>
+        <NavigatorContainer></NavigatorContainer>
       </View>
     </CustomScreen>
   );
@@ -70,14 +53,17 @@ const styles = StyleSheet.create({
     backgroundColor: colors.blue
   },
   statContainer: {},
-  controlContainer: {
+  remoteContainer: {
     flex: 0.9,
-    backgroundColor: colors.light2,
+    backgroundColor: colors.light1,
     flexDirection: "row"
   },
-  button: {
-    marginHorizontal: 10,
-    flex: 1
+  connectText: {
+    textAlign: "center",
+    margin: 0,
+    padding: 5,
+    backgroundColor: colors.yellow,
+    color: "rgb(55, 55, 55)"
   }
 });
 

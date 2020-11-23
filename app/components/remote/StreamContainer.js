@@ -3,16 +3,15 @@ import { View, StyleSheet } from "react-native";
 
 // expo install react-native-webview
 import { WebView } from "react-native-webview";
-import useRemote from "../../remote/useRemote";
 
-function StreamContainer(props) {
-  const remote = useRemote();
+function StreamContainer({ _uri }) {
   return (
     <View style={styles.container}>
       <WebView
-        source={{ uri: "https://www.youtube.com/watch?v=zBtKsrn_tr0" }}
-        // source={{ uri: "https://theinpaint.com/images/example-1-2.jpg" }}
+        // source={{ uri: "https://www.youtube.com/watch?v=zBtKsrn_tr0" }}
+        source={{ uri: _uri }}
         // source={{ uri: "http://" + remote.ip + "/api/listings" }}
+        // source={{ uri: _uri }}
       />
     </View>
   );
