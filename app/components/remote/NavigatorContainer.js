@@ -12,35 +12,37 @@ function NavigatorContainer({
   _onPressTopRight,
   _onPressBottomLeft,
   _onPressBottomRight,
-  _onPressCenter
+  _onPressCenter,
+  _style
 }) {
+  const iconSize = 60;
   return (
-    <View style={styles.container}>
-      <View style={{ flexDirection: "row" }}>
+    <View style={[styles.container, _style]}>
+      <View style={styles.buttonRowContainer}>
         <CustomButton
           _iconName={"arrow-top-left-bold-outline"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressTopLeft}
         ></CustomButton>
         <CustomButton
           _iconName={"arrow-up-bold"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressUp}
         ></CustomButton>
         <CustomButton
           _iconName={"arrow-top-right-bold-outline"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressTopRight}
         ></CustomButton>
       </View>
 
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.buttonRowContainer}>
         <CustomButton
           _iconName={"arrow-left-bold"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressLeft}
         ></CustomButton>
@@ -51,28 +53,28 @@ function NavigatorContainer({
         ></CustomButton>
         <CustomButton
           _iconName={"arrow-right-bold"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressRight}
         ></CustomButton>
       </View>
 
-      <View style={{ flexDirection: "row" }}>
+      <View style={styles.buttonRowContainer}>
         <CustomButton
           _iconName={"arrow-bottom-left-bold-outline"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressBottomLeft}
         ></CustomButton>
         <CustomButton
           _iconName={"arrow-down-bold"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressDown}
         ></CustomButton>
         <CustomButton
           _iconName={"arrow-bottom-right-bold-outline"}
-          _iconSize={80}
+          _iconSize={iconSize}
           _style={styles.button}
           _onPress={_onPressBottomRight}
         ></CustomButton>
@@ -83,22 +85,31 @@ function NavigatorContainer({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
+    margin: 10,
+    marginLeft: 5,
+    alignItems: "stretch",
     justifyContent: "center",
-    backgroundColor: colors.light2,
+    backgroundColor: colors.dark,
+    borderRadius: 10,
     // borderRadius: 170,
     padding: 10
   },
   button: {
     marginHorizontal: 0,
     marginVertical: 0,
-    width: 80,
-    height: 80,
-    borderRadius: 0,
+    height: "100%",
+    flex: 1,
     backgroundColor: colors.red,
     borderWidth: 1,
-    borderColor: colors.light2,
-    borderRadius: 5
+    borderColor: colors.dark,
+    borderRadius: 10
+  },
+  buttonRowContainer: {
+    flex: 1,
+    flexDirection: "row"
+    // backgroundColor: colors.yellow,
+    // borderWidth: 1,
+    // borderColor: colors.blue
   }
 });
 

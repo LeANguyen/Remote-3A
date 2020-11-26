@@ -33,12 +33,29 @@ function RemoteScreen({ navigation }) {
 
       <View style={styles.remoteContainer}>
         <UtilityContainer
+          _onPress1={() => {
+            console.log("Lift up");
+          }}
+          _onPress2={() => console.log("Lift down")}
+          _onPress3={() => console.log("Show Path")}
           _onPress4={() => {
             remote.disconnect();
             navigation.navigate("Welcome");
           }}
+          _style={{ flex: 0.75 }}
         ></UtilityContainer>
-        <NavigatorContainer></NavigatorContainer>
+        <NavigatorContainer
+          _onPressUp={() => remoteApi.moveForward()}
+          _onPressDown={() => remoteApi.moveBackward()}
+          _onPressLeft={() => remoteApi.moveLeft()}
+          _onPressRight={() => remoteApi.moveRight()}
+          _onPressTopLeft={() => remoteApi.moveTopLeft()}
+          _onPressTopRight={() => remoteApi.moveTopRight()}
+          _onPressBottomLeft={() => remoteApi.moveBottomLeft()}
+          _onPressBottomRight={() => remoteApi.moveBottomRight()}
+          _onPressCenter={() => console.log("Auto mode started")}
+          _style={{ flex: 1.25 }}
+        ></NavigatorContainer>
       </View>
     </CustomScreen>
   );
@@ -55,7 +72,7 @@ const styles = StyleSheet.create({
   statContainer: {},
   remoteContainer: {
     flex: 0.9,
-    backgroundColor: colors.light1,
+    backgroundColor: colors.light,
     flexDirection: "row"
   },
   connectText: {

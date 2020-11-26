@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     backgroundColor: colors.red,
     height: 50,
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"

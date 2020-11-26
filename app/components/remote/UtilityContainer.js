@@ -5,20 +5,27 @@ import CustomButton from "../CustomButton";
 import useRemoteApi from "../../api/useRemoteApi";
 import useRemote from "../../remote/useRemote";
 
-function UtilityContainer({ _onPress1, _onPress2, _onPress3, _onPress4 }) {
+function UtilityContainer({
+  _onPress1,
+  _onPress2,
+  _onPress3,
+  _onPress4,
+  _style
+}) {
+  const iconSize = 30;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, _style]}>
       <CustomButton
         _text={"Lift"}
         _iconName={"arrow-up-bold"}
-        _iconSize={30}
+        _iconSize={iconSize}
         _style={[{ backgroundColor: colors.green }, styles.button]}
         _onPress={_onPress1}
       ></CustomButton>
       <CustomButton
         _text="Lift"
         _iconName={"arrow-down-bold"}
-        _iconSize={30}
+        _iconSize={iconSize}
         _style={[{ backgroundColor: colors.green }, styles.button]}
         _onPress={_onPress2}
       ></CustomButton>
@@ -38,7 +45,10 @@ function UtilityContainer({ _onPress1, _onPress2, _onPress3, _onPress4 }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.light2,
+    margin: 10,
+    marginRight: 5,
+    backgroundColor: colors.dark,
+    borderRadius: 10,
     flex: 1
   },
   button: {

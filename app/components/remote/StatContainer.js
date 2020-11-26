@@ -27,11 +27,12 @@ function StatContainer(props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: colors.light2
+    backgroundColor: colors.dark
   },
   statContainer: { flex: 1, alignItems: "center", padding: 5 },
   text: {
-    margin: 0
+    margin: 0,
+    color: "rgb(255, 255, 255)"
   }
 });
 

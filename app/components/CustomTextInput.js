@@ -40,17 +40,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
 
-    backgroundColor: colors.light1,
+    backgroundColor: colors.light,
     height: 50,
-    borderRadius: 5,
-    borderWidth: 0.5,
+    borderRadius: 10,
+    borderWidth: 1,
     borderColor: colors.dim
   },
   icon: {
     margin: 10
   },
   text: {
-    color: colors.dark1,
+    color: colors.dark,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
     fontSize: 12,
     flex: 1,

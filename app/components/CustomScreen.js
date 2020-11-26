@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     alignItems: "stretch",
-    backgroundColor: colors.light2
+    backgroundColor: colors.light
   }
 });
 
